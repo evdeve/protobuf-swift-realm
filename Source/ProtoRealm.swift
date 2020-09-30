@@ -67,12 +67,12 @@ public extension Array where Element:ProtoRealm {
 public extension Realm {
     public func add<T:ProtoRealm>(proto: T.PBType, update: Bool = true) -> T where T == T.RMObject  {
         let map = T.map(proto)
-        self.add(map, update: update)
+        self.add(map, update: .all)
         return map
     }
     public func add<T:ProtoRealm>(protoSequince: [T.PBType], update: Bool = true) -> [T] where T == T.RMObject {
         let map = T.map(protoSequince)
-        self.add(map, update: update)
+        self.add(map, update: .all)
         return map
     }
 }
